@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-/* table, caption, tbody, tfoot, thead, tr, th, td, */
+table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
@@ -20623,8 +20623,9 @@ input.tooltip{
 			<div class="helpLink forPortlet">				
 				<a class="help" href="#" onclick="myvmware.common.openHelpPage('http://kb.vmware.com/kb/2006985?plainview=true');" title="Get Help"> Help</a>
 			</div>
-			<h1>VMware Support Tools</h1>
+			<h1>Support Request</h1>
 		</header>
+		<p>Provide as much information as possible about the issue you are experiencing and your technical environment. This information helps our support team diagnose the issue and provide a solution.</p>
 		<section class="support_request_step1 bottomarea"> 
 			<header class="header">
 				<h2>Details</h2>
@@ -20670,11 +20671,46 @@ input.tooltip{
 				</div>
 			</div>
 			<fieldset>
-				<h2 class="required clearfix">Scsi Sense Code Decoder <span><em>*</em> Required Fields</span></h2>
+				<h2 class="required clearfix">Support Request Information <span><em>*</em> Required Fields</span></h2>
+				<div class="ctrlHolder clearfix">
+					<label for=""> Issue category<em> *</em> </label>
+					<div class="input-wrapper clearfix">
+						<select id="issueDetailsVo.customerProblemCategory" name="issueDetailsVo.customerProblemCategory" class="wide">
+							<option value="">Select one</option>
+
+							<option value="Communities">Communities</option>
+
+							<option value="Downloads" selected="selected">Downloads</option>
+
+							<option value="Education">Education</option>
+
+							<option value="Evaluations">Evaluations</option>
+
+							<option value="Online Store">Online Store</option>
+
+							<option value="Partners">Partners</option>
+
+							<option value="Product Information">Product Information</option>
+
+							<option value="Sales">Sales</option>
+
+							<option value="Support and Renewals">Support and Renewals</option>
+
+							<option value="User Profile">User Profile</option>
+
+							<option value="Website Feedback">Website Feedback</option>
+
+						</select>
+					</div>
+					<div>
+
+					</div>
+					<div class="error_msg"></div>
+				</div>
 				<div>
 					<div style="float: left;">
-						<div class="ctrlHolder clearfix" style="width: 500px;">
-							<label for=""> Scsi Sense Code Log<em> *</em> </label>
+						<div class="ctrlHolder clearfix">
+							<label for=""> Issue description<em> *</em> </label>
 							<div class="input-wrapper issueDescription clearfix">
 								<textarea id="issueDescription" name="issueDetailsVo.problemDescription" class="issueDescriptionText" onfocus="hideSuggestion(id);" onblur="showSuggestion(id);" ></textarea>
 								<button type="button" class="tooltip">Help text for </button><div class="tooltip" style="display: none"><div class="arrow right"></div><div class="content"><p>Provide a complete description of the issue.</p></div></div>
@@ -20694,23 +20730,11 @@ input.tooltip{
 						</div>
 
 
-						<div class="ctrlHolder clearfix" style="width: 500px;">
-							<label for=""> Detected Scsi Sense Code </label>
+						<div class="ctrlHolder clearfix">
+							<label for=""> Additional notes </label>
 							<div class="input-wrapper issueDescription clearfix">
-
-<center>
-<div style="font-size: 15px; font-weight: bold; text-align: center;width: 350px;background-color: #eee; border: 1px solid #000000; padding: 20px">
-<div>
-H:0x <input style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #800000; font-weight: bold; color: #800000; " name="host" id="host" maxlength="2" size="1" type="text"> &nbsp; D:0x <input id="device" style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #008000; font-weight: bold; color: #008000; " name="device" maxlength="2" size="1" type="text"> &nbsp; P:0x <input style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #000080; font-weight: bold; color: #000080; " name="plugin" id="plugin" maxlength="2" size="1" type="text"> 
-<div style="padding-top: 15px;">
-
-<div>
-Sense data: 0x <input style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #800080; font-weight: bold; color: #800080; " id="sensekey" name="sensekey" maxlength="2" size="1" type="text"> &nbsp;  0x <input style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #808000; font-weight: bold; color: #808000; " id="asc" name="asc" maxlength="2" size="1" type="text"> &nbsp; 0x <input style="padding:2px; width: 15px; text-align: center; border-style: solid; border-color: #808000; font-weight: bold; color: #808000; " name="ascq" id="ascq" maxlength="2" size="1" type="text"><br>
-
-<p></p></div></div></div></div>
-
-</center>
-
+								<textarea id="additionalComment" name="issueDetailsVo.additionalComment" onkeypress="incrementCounter(id);" class="issueDescriptionText" onfocus="hideSuggestion(id);" onblur="showSuggestion(id);" style="color: rgb(153, 153, 153);"></textarea>
+								<div class="note">Maximum 4000 characters</div>
 							</div>
 							<div>
 								<div></div>
@@ -20719,45 +20743,8 @@ Sense data: 0x <input style="padding:2px; width: 15px; text-align: center; borde
 						</div>
 						<div>
 						</div></div>
-					<div style="float: left;width: 550px;">
-<table border="1" id="tbr">
-<tbody><tr>
-<td><strong>Type</strong></td>
-<td><strong>Code</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr style="border-left: 5px solid #800000;">
-<td>Host Status</td>
-<td id="hostv"></td>
-<td id="hostn"></td>
-<td id="hostd"></td>
-</tr>
-<tr style="border-left: 5px solid #008000;">
-<td>Device Status</td>
-<td id="devicev"></td>
-<td id="devicen"></td>
-<td id="deviced"></td>
-</tr>
-<tr style="border-left: 5px solid #000080;">
-<td>Plugin Status</td>
-<td id="pluginv"></td>
-<td id="pluginn"></td>
-<td id="plugind"></td>
-</tr>
-<tr style="border-left: 5px solid #800080;">
-<td>Sense Key</td>
-<td id="sensekeyv"></td>
-<td colspan="2" id="sensekeyn"></td>
-</tr>
-<tr style="border-left: 5px solid #808000;">
-<td>Additional Sense Data</td>
-<td id="ascv"></td>
-<td colspan="2" id="ascn"></td>
-</tr>
-
-</tbody></table>
-
+					<div style="float: left;">
+						<ul class="linklist linklist-border b-pd-b20 pd-b50" id="searchResultsContent" style="display:block;"></ul>
 					</div>
 				</div>
 			</fieldset>
