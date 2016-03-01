@@ -50,6 +50,11 @@ function searchKB() {
 
 		}
 
+			   if(query.indexOf("netdev_watchdog") > -1 || query.indexOf("LinNet") > -1|| query.indexOf("transmit timed out") > -1) {
+			console.log("netwatchdo");
+	    		$("#searchResultsContent").append('<li class="b-bd-t1-gray"><div class="a-row b-row pd-t10 pd-b20"><h3><a class="l-para-head no-bd-t" href="http://kb.vmware.com/kb/2124669" target="_blank" name="&amp;lpos=content : 12">VMware KB: NETDEV WATCHDOG timeout error and ESXi <b>...</b></a></h3><p class="c-body pd-t5">NETDEV WATCHDOG timeout error and ESXi 6.0 loses network<br> connectivity (<b>2124669</b>). Symptoms. After upgrading to or <b>...</b>  </p><a class="c-body" href="http://kb.vmware.com/kb/2124669" target="_blank">http://kb.vmware.com/kb/2124669</a></div></li>');
+
+		}
 
                     for(var i = 0; i < res['GSP']['RES']['R'].length; i ++) {
                         var kb = res['GSP']['RES']['R'][i];
