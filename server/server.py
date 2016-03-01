@@ -61,9 +61,13 @@ def search(query):
     para['q'] = query;
     para['num'] = '5';
     data = urllib.urlencode(para, True)
-    f = urllib.urlopen("http://www.vmware.com/searchapp/supportsearchapp/vmware/search.go?%s" % data)
+    f = urllib.urlopen('http://www.vmware.com/searchapp/supportsearchapp/vmware/search.go?%s' % data)
     result = f.read()
-    doc = xmltodict.parse(result);
+    try:
+    	doc = xmltodict.parse(result);
+    except:
+        return ""
+    print result
     ret = json.dumps(doc,ensure_ascii=False)
     return ret 
        
@@ -80,5 +84,7 @@ def service():
        
 
 if __name__ == '__main__':
+    app.debug = True
     app.run(host='0.0.0.0', port=8888)
+
 
