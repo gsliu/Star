@@ -20,7 +20,7 @@ function searchKB() {
     console.log("searching KB...." + query);
     $.ajax({
             type: "POST",
-            url: "http://easydebug.eng.vmware.com:8888/search",
+            url: "http://unified.eng.vmware.com:8888/search",
             data: 'query=' + query,
             cache: false, //......
             success: function (res) {
@@ -32,7 +32,7 @@ function searchKB() {
    	var match = scsid.exec(query);
     	if(match != null) {
 			console.log("scsi find");
-	  		var addr="http://easydebug.eng.vmware.com/scsidecoder/"
+	  		var addr="http://unified.eng.vmware.com/scsidecoder/"
 	    		$("#searchResultsContent").append('<li class="b-bd-t1-gray" style="padding-bottom: 15px;">' +
                             '<div class="a-row b-row pd-t10 pd-b20">' +
                             '<h3><a style="color:rgba(243, 198, 63, 0.85);" class="l-para-head no-bd-t" href="' + addr + '">SCSI Sense Code Decoder - VMware Support Tools</a></h2>' +
@@ -49,7 +49,7 @@ function searchKB() {
    var match = guest.exec(query);
     if(match != null) {
 			console.log("guest hung find");
-	  		var addr="http://easydebug.eng.vmware.com/guestoshung/"
+	  		var addr="http://unified.eng.vmware.com/guestoshung/"
 	    		$("#searchResultsContent").append('<li class="b-bd-t1-gray" style="padding-bottom: 15px;">' +
                             '<div class="a-row b-row pd-t10 pd-b20">' +
                             '<h3><a style="color:rgba(243, 198, 63, 0.85);" class="l-para-head no-bd-t" href="' + addr + '">Guest OS hung debugging - VMware Support Tools</a></h2>' +
